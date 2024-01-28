@@ -1,0 +1,10 @@
+<h1><p>content-list works!</p></h1>
+<br>
+<div *ngFor="let contentItem of contentArray">
+    <h1>{{ contentItem.title }}</h1>
+    <p>{{ contentItem.description }}</p>
+    <p>Creator: {{ contentItem.creator }}</p>
+    <img [src]="contentItem.imgURL" alt="{{ contentItem.title }}">
+    <p>Type: {{ contentItem.type }}</p>
+    <hr>
+  </div>
