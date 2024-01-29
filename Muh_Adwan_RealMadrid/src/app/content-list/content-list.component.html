@@ -1,6 +1,4 @@
-<h1><p>content-list works!</p></h1>
-<br>
-<div *ngFor="let contentItem of contentArray">
+<div *ngFor="let contentItem of contentArray; let i= index" class="card" [ngClass]="{'first-class' : i===0}">
     <h1>{{ contentItem.title }}</h1>
     <p>{{ contentItem.description }}</p>
     <p>Creator: {{ contentItem.creator }}</p>

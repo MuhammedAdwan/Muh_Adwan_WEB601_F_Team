@@ -1,13 +1,12 @@
-<!--This without iteration-->
+<!--This without iteration
 <div>
     <h3>Content Item 1</h3>
     <div [innerHTML]="contentList.getContentHtml(0)"></div>
     <div [innerHTML]="contentList.getContentHtml(1)"></div>
     <div [innerHTML]="contentList.getContentHtml(2)"></div>
-</div>
+</div> -->
 
-<!--This div by using the ng iteration-->
-<!-- 
+<!--This div by using the ng iteration
 <div *ngFor="let contentItem of contentList.content; let i = index">
     <div>
         <h3>Content Item {{ i + 1 }}</h3>
