@@ -7,9 +7,11 @@ import { Content } from './helper-files/content-interface';
 export class ContentTypeFilterPipe implements PipeTransform {
 
   transform(value: Content[], type: string): Content[] {
+    // if no type is provided, return the original array
     if (!type) {
       return value;
     }
+    // filter the array and return the new array
     return value.filter((item: Content) => item.type === type);
   }
 
