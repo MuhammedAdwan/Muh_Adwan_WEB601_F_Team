@@ -79,6 +79,7 @@ export class ContentListComponent {
   searchTitle: string = '';
   searchResultMessage: string = '';
   searchResultMessageColor: string = '';
+  foundItemIndex: number = -1;
 
   searchContent() {
     const foundItem = this.contentArray.find(item => item.title === this.searchTitle);
@@ -88,6 +89,7 @@ export class ContentListComponent {
     } else {
       this.searchResultMessage = `Content item with title '${this.searchTitle}' doesn't exist.`;
       this.searchResultMessageColor = 'red';
+      this.foundItemIndex = -1;
     }
   }
 }
