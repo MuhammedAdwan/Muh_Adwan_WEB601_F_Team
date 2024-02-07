@@ -75,7 +75,7 @@ export class ContentListComponent {
       id: 8,
       title: 'Federico Valverde',
       description: 'Federico Valverde once said he will keep running until his legs explode for Real Madrid',
-      creator: 'SportBible',
+      creator: '',
       imgURL: '',
       type: 'Midfielder',
       tags: ['Valverde', 'Uruguay']
@@ -86,7 +86,7 @@ export class ContentListComponent {
   searchTitle: string = '';
   searchResultMessage: string = '';
   searchResultMessageColor: string = '';
-  foundItemIndex: number = -1;
+  foundItemIndex: number = -1; //if the item in not found, the index will be -1
 
   searchContent() {
     const foundItem = this.contentArray.find(item => item.title === this.searchTitle);

@@ -16,7 +16,7 @@ import { HoverAffectDirective } from './hover-affect.directive';
     ContentListComponent,
     ContentTypeFilterPipe,
     ContentCardComponent,
-    HoverAffectDirective
+    HoverAffectDirective// declare the directive here
   ],
   imports: [
     BrowserModule,

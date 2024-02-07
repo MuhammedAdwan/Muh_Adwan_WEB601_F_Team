@@ -2,11 +2,11 @@
   <input type="text" [(ngModel)]="searchTitle" placeholder="Enter your title">
   <button (click)="searchContent()">Search</button>
 </div>
-
+<!--Should display message if no search result-->
 <div *ngIf="searchResultMessage" [style.color]="searchResultMessageColor">
   {{ searchResultMessage }}
 </div>
-
+<!--Should generate content card for each filtered item-->
 <div class="content-list">
   <div *ngFor="let contentItem of filteredContentArray" class="card" [ngClass]="{ 'offense-card': contentItem.type === 'Offense', 'midfielder-card': contentItem.type === 'Midfielder', 'defender-card': contentItem.type === 'Defender' }">
     <h1>{{ contentItem.title }}</h1>
