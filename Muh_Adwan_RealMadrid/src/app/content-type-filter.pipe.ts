@@ -6,13 +6,13 @@ import { Content } from './helper-files/content-interface';
 })
 export class ContentTypeFilterPipe implements PipeTransform {
 
-  transform(value: Content[], type: string): Content[] {
+  transform(contentArray: Content[], type: string): Content[] {
     // if no type is provided, return the original array
     if (!type) {
-      return value;
+      return contentArray;
     }
     // filter the array and return the new array
-    return value.filter((item: Content) => item.type === type);
+    return contentArray.filter((item: Content) => item.type === type);
   }
 
 }

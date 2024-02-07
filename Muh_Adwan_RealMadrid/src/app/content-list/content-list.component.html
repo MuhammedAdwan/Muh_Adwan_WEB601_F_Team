@@ -7,40 +7,13 @@
   {{ searchResultMessage }}
 </div>
 
-<div *ngFor="let contentItem of contentArray; let i = index" class="card"
-     [ngClass]="{ 'first-class': i === 0, 'highlighted': i === foundItemIndex }">
-  <h1>{{ contentItem.title }}</h1>
-  <p>{{ contentItem.description }}</p>
-  <p>Creator: {{ contentItem.creator }}</p>
-  <img [src]="contentItem.imgURL" alt="{{ contentItem.title }}">
-  <p>Type: {{ contentItem.type }}</p>
-  <hr>
-</div>
-
-<div class="list">
-  <h3>Content Items with no type </h3>
-  <div *ngFor="let contentItem of contentArray | contentTypeFilter:''" class="card">
-    <p>{{ contentItem.title }}</p>
-  </div>
-</div>
-
-<div class="list">
-  <h3>Content Items with Offense Type</h3>
-  <div *ngFor="let contentItem of contentArray | contentTypeFilter:'Offense'" class="card">
-    <p>{{ contentItem.title }}</p>
-  </div>
-</div>
-
-<div class="list">
-  <h3>Content Items with Midfielder Type</h3>
-  <div *ngFor="let contentItem of contentArray | contentTypeFilter:'Midfielder'" class="card">
-    <p>{{ contentItem.title }}</p>
-  </div>
-</div>
-
-<div class="list">
-  <h3>Content Items with Defender Type</h3>
-  <div *ngFor="let contentItem of contentArray | contentTypeFilter:'Defender'" class="card">
-    <p>{{ contentItem.title }}</p>
+<div class="content-list">
+  <div *ngFor="let contentItem of filteredContentArray" class="card" [ngClass]="{ 'offense-card': contentItem.type === 'Offense', 'midfielder-card': contentItem.type === 'Midfielder', 'defender-card': contentItem.type === 'Defender' }">
+    <h1>{{ contentItem.title }}</h1>
+    <p>{{ contentItem.description }}</p>
+    <p>Creator: {{ contentItem.creator }}</p>
+    <img [src]="contentItem.imgURL" alt="{{ contentItem.title }}">
+    <p>Type: {{ contentItem.type }}</p>
+    <hr>
   </div>
 </div>

@@ -1,26 +1,28 @@
-.list{
+.content-list {
     margin-bottom: 20px;
-}
-
-
-
-.card {
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
+  
+    .card {
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+  
+      &.first-card {
+        border: 2px solid black;
+        padding: 15px;
+        margin: 15px;
+      }
+  
+      &.offense-card {
+        background-color: lightgreen;
+      }
+  
+      &.midfielder-card {
+        background-color: lightblue;
+      }
+  
+      &.defender-card {
+        background-color: lightcoral;
+      }
+    }
   }
-
-  .card.highlighted {
-    border: 2px solid yellow;
-  }
-
-
-.first-card{
-    border: 2px solid black;
-    padding: 15px;
-    margin: 15px ;
-}
-
-.pic1 {
-    background-color: lightgreen;
-}
+  
