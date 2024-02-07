@@ -70,6 +70,15 @@ export class ContentListComponent {
       imgURL: 'https://images.ladbible.com/resize?type=jpeg&quality=70&width=720&fit=contain&gravity=null&url=https://s3-images.sportbible.com/s3/content/0de5be99591978e798955a76ce025ef6.png',
       type: 'Midfielder',
       tags: ['Zidan', 'France']
+    },
+    {
+      id: 8,
+      title: 'Federico Valverde',
+      description: 'Federico Valverde once said he will keep running until his legs explode to serve Real Madrid',
+      creator: 'SportBible',
+      imgURL: '',
+      type: 'Midfielder',
+      tags: ['Valverde', 'Uruguay']
     }
   ];
 
