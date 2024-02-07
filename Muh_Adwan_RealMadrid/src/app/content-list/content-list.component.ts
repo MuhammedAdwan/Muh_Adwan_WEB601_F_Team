@@ -74,7 +74,7 @@ export class ContentListComponent {
     {
       id: 8,
       title: 'Federico Valverde',
-      description: 'Federico Valverde once said he will keep running until his legs explode to serve Real Madrid',
+      description: 'Federico Valverde once said he will keep running until his legs explode for Real Madrid',
       creator: 'SportBible',
       imgURL: '',
       type: 'Midfielder',
