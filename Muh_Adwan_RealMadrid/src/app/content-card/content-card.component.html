@@ -4,15 +4,14 @@
     <p>Creator: {{ contentItem.creator }}</p>
     <img *ngIf="contentItem.imgURL; else defaultImage" [src]="contentItem.imgURL" alt="{{ contentItem.title }}">
     <ng-template #defaultImage>
-      <img src="path/to/default/image" alt="Default Image">
+      <img src="https://www.shutterstock.com/image-vector/default-avatar-profile-icon-social-600nw-1677509740.jpg" alt="Default Image">
     </ng-template>
-    <p>Type: {{ contentItem.type }}</p>
   </div>
   
-  <div class="content-type" appHoverAffect>
-    <p>Type: {{ contentItem.type }}</p>
+  <div class="content-type" >
+    <p appHoverAffect="underline">Type: {{ contentItem.type }}</p>
     <div *ngFor="let tag of contentItem.tags">
-      <span appHoverAffect [hoverStyle]="'bold'">{{ tag }}</span>
+      <span appHoverAffect="bold" appHoverAffect="border">{{ tag }}</span>
     </div>
   </div>
   

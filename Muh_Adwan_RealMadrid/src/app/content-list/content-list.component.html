@@ -9,11 +9,6 @@
 <!--Should generate content card for each filtered item-->
 <div class="content-list">
   <div *ngFor="let contentItem of filteredContentArray" class="card" [ngClass]="{ 'offense-card': contentItem.type === 'Offense', 'midfielder-card': contentItem.type === 'Midfielder', 'defender-card': contentItem.type === 'Defender' }">
-    <h1>{{ contentItem.title }}</h1>
-    <p>{{ contentItem.description }}</p>
-    <p>Creator: {{ contentItem.creator }}</p>
-    <img [src]="contentItem.imgURL" alt="{{ contentItem.title }}">
-    <p>Type: {{ contentItem.type }}</p>
-    
+    <app-content-card [contentItem]="contentItem"></app-content-card>
   </div>
 </div>
