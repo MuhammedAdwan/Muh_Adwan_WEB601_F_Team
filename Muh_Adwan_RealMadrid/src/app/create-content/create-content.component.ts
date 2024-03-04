@@ -26,6 +26,15 @@ export class CreateContentComponent implements OnInit{
 
   addContent(contentForm: NgForm) {
 
+    //bonus mark
+    if (!this.newContent.title  || !this.newContent.id) {
+
+      this.errorMessage =  ' Please fill in all required fields';
+      return;
+    }
+    
+
+
   const promise = new Promise<Content>((resolve, reject) => {
     // Simulate a potential delay or server interaction
     setTimeout(() => {
@@ -47,8 +56,13 @@ export class CreateContentComponent implements OnInit{
       this.errorMessage = '';
     },
     (error) => {
-      this.errorMessage = error;
+      if (error === 'Please fill in all required fields.') {
+        this.errorMessage = 'Content creation failed: ' + error; 
+      } else {
+        this.errorMessage = 'Unexpected error: ' + error;
+      }
+    
     }
-  );
-}
+      );
+  }
 }
