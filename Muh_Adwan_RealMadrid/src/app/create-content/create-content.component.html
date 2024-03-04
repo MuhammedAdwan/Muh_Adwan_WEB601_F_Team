@@ -1,0 +1,7 @@
+<form #contentForm="ngForm">
+    <input type="number" name="id" placeholder="ID" [(ngModel)]="newContent.id" required>
+    <input type="text" name="title" placeholder="Title"  [(ngModel)]="newContent.title" required>
+    <button (click)="addContent(contentForm)">Add Content</button>
+    <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+  </form>
+  

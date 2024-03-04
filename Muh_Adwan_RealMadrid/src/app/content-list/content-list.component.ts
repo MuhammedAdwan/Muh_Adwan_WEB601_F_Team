@@ -98,4 +98,9 @@ export class ContentListComponent {
       this.foundItemIndex = -1;
     }
   }
+
+  handleContentAdded(newContent: Content) {
+    this.contentArray = [newContent, ...this.contentArray];
+    console.log(' Content added successfully' , newContent.title);
+}
 }
