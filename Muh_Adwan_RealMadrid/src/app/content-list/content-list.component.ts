@@ -100,7 +100,7 @@ export class ContentListComponent {
   }
 
   handleContentAdded(newContent: Content) {
-    this.contentArray = [newContent, ...this.contentArray];
+    this.contentArray.push({ ...newContent });
     console.log(' Content added successfully' , newContent.title);
 }
 }
