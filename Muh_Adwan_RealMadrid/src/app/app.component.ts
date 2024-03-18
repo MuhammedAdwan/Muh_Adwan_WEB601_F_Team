@@ -10,7 +10,8 @@ import { RealMadridService } from './helper-files/real-madrid.service';
 export class AppComponent implements OnInit{
   title = 'Muh_Adwan_RealMadrid';
   SingleContentItem: Content | undefined;
-
+  selectedId: number | undefined;
+  errorMessage: string | undefined;
   constructor(private realMadridService: RealMadridService) {}
 
   ngOnInit() {
@@ -19,4 +20,14 @@ export class AppComponent implements OnInit{
       this.SingleContentItem = content;
     });
   }
+
+loadContentItem(id: number): void {
+  this.realMadridService.getContentById(id).subscribe(item=> {
+    this.SingleContentItem = item;
+  },
+  error => {
+    console.error('Error occured while trying to retrieve the content item by id:', error);
+  }
+  );
+}
 }
