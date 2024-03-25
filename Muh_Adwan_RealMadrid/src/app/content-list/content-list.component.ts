@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { contentArray } from '../helper-files/contentDb';
 import { RealMadridService } from '../helper-files/real-madrid.service';
-
+import { MessagesService } from '../messages.service';
 @Component({
   selector: 'app-content-list',
   templateUrl: './content-list.component.html',
@@ -16,6 +16,7 @@ export class ContentListComponent implements OnInit{
   searchResultMessage: string = '';
   searchResultMessageColor: string = '';
   foundItemIndex: number = -1; //if the item in not found, the index will be -1
+  messagesService: any;
 
   constructor(private realMadridService: RealMadridService) {}
 
@@ -35,5 +36,9 @@ export class ContentListComponent implements OnInit{
       this.searchResultMessageColor = 'red';
       this.foundItemIndex = -1;
     }
+  }
+  handleContentAdded(content: Content) {
+    this.filteredContentArray.push(content);
+    this.messagesService.add("Content added successfully!");
   }
 }
