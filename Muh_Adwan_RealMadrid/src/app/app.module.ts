@@ -10,6 +10,7 @@ import { HoverAffectDirective } from './hover-affect.directive';
 import { MessagesComponent } from './messages/messages.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { HttpClientModule } from '@angular/common/http';
 import { ModifyContentComponent } from './modify-content/modify-content.component';
 
 
@@ -28,6 +29,7 @@ import { ModifyContentComponent } from './modify-content/modify-content.componen
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false })
   ],
   providers: [],
